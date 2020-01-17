@@ -1,0 +1,11 @@
+.accordion-component {
+  margin: 2rem 0 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-top: 3px solid blue;
+  border-radius: 4px;
+}
+.accordion-component__title {
+  text-transform: capitalize;
+  font-weight: normal;
+}
