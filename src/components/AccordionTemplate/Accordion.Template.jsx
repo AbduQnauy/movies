@@ -2,6 +2,7 @@ import React from "react";
 import Accordion from "./Accordion";
 
 const AccordionTemplate = ({ innerBox, outerBox, parentFont }) => {
+  const myData = ["alligator Mississippiensis", "alligator"];
   return (
     <Accordion
       allowMultipleOpen
@@ -9,7 +10,24 @@ const AccordionTemplate = ({ innerBox, outerBox, parentFont }) => {
       outerBox={outerBox}
       parentFont={parentFont}
     >
-      <div categoryName="alligator Mississippiensis">
+      {myData.map((datum, index) => {
+        return (
+          <div categoryName={datum} key={index}>
+            <span>
+              <strong>Common Name:</strong> American Alligator
+            </span>
+            <br />
+            <span>
+              <strong>Distribution:</strong> Texas to North Carolina, US
+            </span>
+            <br />
+            <span>
+              <strong>Endangered Status:</strong> Currently Not Endangered
+            </span>
+          </div>
+        );
+      })}
+      {/* <div categoryName="xxxxxxxxxxxxxxxxxxxxxx">
         <span>
           <strong>Common Name:</strong> American Alligator
         </span>
@@ -21,9 +39,10 @@ const AccordionTemplate = ({ innerBox, outerBox, parentFont }) => {
         <span>
           <strong>Endangered Status:</strong> Currently Not Endangered
         </span>
-      </div>
+      </div> */}
 
-      <div categoryName="alligator Sinensis">
+      {/*  */}
+      {/* <div categoryName="alligator Mississippiensis">
         <span>
           <strong>Common Name:</strong> American Alligator
         </span>
@@ -35,7 +54,22 @@ const AccordionTemplate = ({ innerBox, outerBox, parentFont }) => {
         <span>
           <strong>Endangered Status:</strong> Currently Not Endangered
         </span>
-      </div>
+      </div> */}
+      {/*  */}
+
+      {/* <div categoryName="alligator Sinensis">
+        <span>
+          <strong>Common Name:</strong> American Alligator
+        </span>
+        <br />
+        <span>
+          <strong>Distribution:</strong> Texas to North Carolina, US
+        </span>
+        <br />
+        <span>
+          <strong>Endangered Status:</strong> Currently Not Endangered
+        </span>
+      </div> */}
     </Accordion>
   );
 };

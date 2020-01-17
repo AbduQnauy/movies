@@ -6,19 +6,20 @@ const Accordion = ({
   allowMultipleOpen,
   innerBox,
   outerBox,
-  parentFont
+  parentFont,
+  controls
 }) => {
   const [openSections, setOpenSections] = React.useState({});
   const opens = {};
-
-  children.forEach(child => {
-    if (child.props.isOpen) {
-      opens[child.props.categoryName] = true;
-    }
-  });
+  if (children.length > 1) {
+    children.forEach(child => {
+      if (child.props.isOpen) {
+        opens[child.props.categoryName] = true;
+      }
+    });
+  }
   const onClick = categoryName => {
     const isOpen = !!openSections[categoryName];
-
     if (allowMultipleOpen) {
       setOpenSections({
         ...openSections,
@@ -40,6 +41,7 @@ const Accordion = ({
           innerBox={innerBox}
           outerBox={outerBox}
           parentFont={parentFont}
+          controls={controls}
           key={index}
         >
           {child.props.children}

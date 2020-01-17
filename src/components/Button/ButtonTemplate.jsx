@@ -1,16 +1,14 @@
 import React from "react";
 import "./Button.styles.css";
-const ButtonTemplate = ({ submitButton, submitType, color }) => {
+const ButtonTemplate = ({ submitButton, color, onClick }) => {
   return (
-    <input
+    <button
       className="Template__Button"
-      type={submitType}
-      value={submitButton}
       style={{ backgroundColor: color }}
-    />
+      onClick={onClick}
+    >
+      {submitButton}
+    </button>
   );
-};
-ButtonTemplate.defaultProps = {
-  submitType: "text"
 };
 export default ButtonTemplate;

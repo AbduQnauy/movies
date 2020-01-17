@@ -32,12 +32,22 @@ const AccordionSection = ({
             <ButtonTemplate
               submitButton="edit"
               color="#FFA500"
-              onClick={() => console.log("Edit is clicked")}
+              onClick={event => {
+                event.stopPropagation();
+                //
+                console.log("Edit is clicked");
+                //
+              }}
             />
             <ButtonTemplate
               submitButton="delete"
               color="red"
-              onClick={() => console.log("Delete is clicked")}
+              onClick={event => {
+                event.stopPropagation();
+                //
+                console.log("Delete is clicked");
+                //
+              }}
             />
           </div>
         ) : null}

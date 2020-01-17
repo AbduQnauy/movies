@@ -2,7 +2,7 @@ import React from "react";
 import "./form.styles.css";
 import ButtonTemplate from "../Button/ButtonTemplate";
 
-const FormTemplate = ({ submitType, submitButton, onSubmit }) => {
+const FormTemplate = ({ submitButton, onSubmit }) => {
   return (
     <form onSubmit={onSubmit} className="template-form">
       <span className="form--input">
@@ -15,11 +15,7 @@ const FormTemplate = ({ submitType, submitButton, onSubmit }) => {
         rows="2"
         cols="30"
       />
-      <ButtonTemplate
-        submitType={submitType}
-        submitButton={submitButton}
-        color="#12a029"
-      />
+      <ButtonTemplate submitButton={submitButton} color="#12a029" />
     </form>
   );
 };

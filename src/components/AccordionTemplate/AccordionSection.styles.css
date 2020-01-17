@@ -9,9 +9,6 @@
   display: flex;
   align-items: center;
 }
-.accordion-section-inner-box {
-  padding: 0 3.5em;
-}
 .accordion__icon {
   float: left;
   margin: 0 1em;
@@ -19,11 +16,11 @@
 }
 .accordion__controls {
   margin-left: auto;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .accordion__controls * {
-  width: 20%;
-  text-align: center;
+  width: 8em;
+}
+.accordion-section-inner-box {
+  padding: 0 3.5em;
 }

@@ -9,11 +9,7 @@ const CategoryForm = () => {
   return (
     <div style={{ backgroundColor: "#fff", padding: "1rem" }}>
       <h3 style={{ marginTop: 0, fontWeight: "normal" }}>Add Category</h3>
-      <FormTemplate
-        submitType="submit"
-        submitButton="create category"
-        onSubmit={onSubmit}
-      />
+      <FormTemplate submitButton="create category" onSubmit={onSubmit} />
     </div>
   );
 };
