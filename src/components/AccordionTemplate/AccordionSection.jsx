@@ -12,6 +12,8 @@ import ButtonTemplate from "../Button/ButtonTemplate";
 const AccordionSection = ({
   onClick,
   label,
+  description,
+  rate,
   isOpen,
   children,
   innerBox,
@@ -41,7 +43,30 @@ const AccordionSection = ({
               color="#FFA500"
               onClick={event => {
                 event.stopPropagation();
-                onEdit();
+
+                let movieName;
+                let movieDescription;
+                let movieRate;
+                do {
+                  movieName = prompt("Do you Want to Edit Movie Name", label);
+                } while (movieName === null);
+
+                do {
+                  movieDescription = prompt(
+                    "Do you Want to Edit Movie Description",
+                    description
+                  );
+                } while (movieDescription === null);
+
+                do {
+                  movieRate = prompt("Do you Want to Edit Movie Rate", rate);
+                } while (movieRate === null);
+
+                onEdit({
+                  name: movieName,
+                  description: movieDescription,
+                  rate: movieRate
+                });
               }}
             >
               <FontAwesomeIcon icon={faEdit} style={{ marginRight: ".2em" }} />

@@ -39,6 +39,8 @@ const Accordion = ({
         <AccordionSection
           isOpen={!!openSections[child.props.label]}
           label={child.props.label}
+          description={child.props.description}
+          rate={child.props.rate}
           onClick={onClick}
           innerBox={innerBox}
           outerBox={outerBox}

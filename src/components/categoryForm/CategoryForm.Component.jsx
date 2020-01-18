@@ -6,7 +6,6 @@ import { createCategory } from "../../redux/movies/actions";
 const CategoryForm = ({ createCategory }) => {
   const onSubmit = e => {
     e.preventDefault();
-    console.log(e.target[0].value, e.target[1].value);
     createCategory({ name: e.target[0].value, description: e.target[1].value });
     e.target[0].value = e.target[1].value = "";
   };
