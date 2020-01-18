@@ -11,7 +11,7 @@ import ButtonTemplate from "../Button/ButtonTemplate";
 
 const AccordionSection = ({
   onClick,
-  categoryName,
+  label,
   isOpen,
   children,
   innerBox,
@@ -24,7 +24,7 @@ const AccordionSection = ({
   return (
     <div className="accordion-section" style={parentFont}>
       <div
-        onClick={() => onClick(categoryName)}
+        onClick={() => onClick(label)}
         className="accordion-section-outer-box"
         style={outerBox}
       >
@@ -32,7 +32,7 @@ const AccordionSection = ({
           {!isOpen && <FontAwesomeIcon icon={faBars} />}
           {isOpen && <FontAwesomeIcon icon={faTimes} />}
         </div>
-        <div>{categoryName}</div>
+        <div>{label}</div>
 
         {controls ? (
           <div className="accordion__controls">

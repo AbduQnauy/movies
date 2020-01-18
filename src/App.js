@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryForm from "./components/categoryForm/CategoryForm.Component";
-import AccordionCompoenent from "./components/Accordion/Accordion.Component";
+import AccordionCompoenent from "./components/Category/Category.Component";
 
 function App() {
   return (

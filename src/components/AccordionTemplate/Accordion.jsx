@@ -16,20 +16,20 @@ const Accordion = ({
   if (children.length > 1) {
     children.forEach(child => {
       if (child.props.isOpen) {
-        opens[child.props.categoryName] = true;
+        opens[child.props.label] = true;
       }
     });
   }
-  const onClick = categoryName => {
-    const isOpen = !!openSections[categoryName];
+  const onClick = label => {
+    const isOpen = !!openSections[label];
     if (allowMultipleOpen) {
       setOpenSections({
         ...openSections,
-        [categoryName]: !isOpen
+        [label]: !isOpen
       });
     } else {
       setOpenSections({
-        [categoryName]: !isOpen
+        [label]: !isOpen
       });
     }
   };
@@ -37,8 +37,8 @@ const Accordion = ({
     <div>
       {children.map((child, index) => (
         <AccordionSection
-          isOpen={!!openSections[child.props.categoryName]}
-          categoryName={child.props.categoryName}
+          isOpen={!!openSections[child.props.label]}
+          label={child.props.label}
           onClick={onClick}
           innerBox={innerBox}
           outerBox={outerBox}
