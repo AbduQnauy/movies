@@ -1,10 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 import FormTemplate from "../FormTemplate/Form.Component";
+import { createCategory } from "../../redux/movies/actions";
 
-const CategoryForm = () => {
+const CategoryForm = ({ createCategory }) => {
   const onSubmit = e => {
     e.preventDefault();
     console.log(e.target[0].value, e.target[1].value);
+    createCategory({ name: e.target[0].value, description: e.target[1].value });
+    e.target[0].value = e.target[1].value = "";
   };
   return (
     <div style={{ backgroundColor: "#fff", padding: "1rem" }}>
@@ -14,4 +18,7 @@ const CategoryForm = () => {
   );
 };
 
-export default CategoryForm;
+export default connect(
+  null,
+  { createCategory }
+)(CategoryForm);

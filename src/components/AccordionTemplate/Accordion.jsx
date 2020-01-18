@@ -7,7 +7,9 @@ const Accordion = ({
   innerBox,
   outerBox,
   parentFont,
-  controls
+  controls,
+  onEdit,
+  onDelete
 }) => {
   const [openSections, setOpenSections] = React.useState({});
   const opens = {};
@@ -42,6 +44,8 @@ const Accordion = ({
           outerBox={outerBox}
           parentFont={parentFont}
           controls={controls}
+          onDelete={onDelete}
+          onEdit={onEdit}
           key={index}
         >
           {child.props.children}

@@ -1,6 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faTimes,
+  faEdit,
+  faMinusCircle
+} from "@fortawesome/free-solid-svg-icons";
 import "./AccordionSection.styles.css";
 import ButtonTemplate from "../Button/ButtonTemplate";
 
@@ -12,7 +17,9 @@ const AccordionSection = ({
   innerBox,
   outerBox,
   parentFont,
-  controls
+  controls,
+  onEdit,
+  onDelete
 }) => {
   return (
     <div className="accordion-section" style={parentFont}>
@@ -34,21 +41,25 @@ const AccordionSection = ({
               color="#FFA500"
               onClick={event => {
                 event.stopPropagation();
-                //
-                console.log("Edit is clicked");
-                //
+                onEdit();
               }}
-            />
+            >
+              <FontAwesomeIcon icon={faEdit} style={{ marginRight: ".2em" }} />
+            </ButtonTemplate>
+
             <ButtonTemplate
               submitButton="delete"
               color="red"
               onClick={event => {
                 event.stopPropagation();
-                //
-                console.log("Delete is clicked");
-                //
+                onDelete();
               }}
-            />
+            >
+              <FontAwesomeIcon
+                icon={faMinusCircle}
+                style={{ marginRight: ".2em" }}
+              />
+            </ButtonTemplate>
           </div>
         ) : null}
       </div>
