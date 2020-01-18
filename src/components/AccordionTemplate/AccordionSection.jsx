@@ -52,7 +52,12 @@ const AccordionSection = ({
               color="red"
               onClick={event => {
                 event.stopPropagation();
-                onDelete();
+                const decide = prompt(
+                  "If you decide DELETE only click Enter else Esc"
+                );
+                if (decide !== null) {
+                  onDelete();
+                }
               }}
             >
               <FontAwesomeIcon

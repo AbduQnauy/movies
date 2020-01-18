@@ -44,8 +44,8 @@ const Accordion = ({
           outerBox={outerBox}
           parentFont={parentFont}
           controls={controls}
-          onDelete={onDelete}
-          onEdit={onEdit}
+          onDelete={child.props.onDelete}
+          onEdit={child.props.onEdit}
           key={index}
         >
           {child.props.children}
